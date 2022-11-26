@@ -10,20 +10,8 @@ class StudentModel extends Model
     use HasFactory;
 
     public function getAllStudents(){
-        return(
-            [[
-                'idnumber' => 1,
-                'firstname' => 'Kenneth',
-                'lastname' => 'Itang',
-                'address' => 'Kilid skwelahan'
-            ],
-            [
-                'idnumber' => 2,
-                'firstname' => 'Aleck',
-                'lastname' => 'Sumalinog',
-                'address' => 'Kilid ilaha Itang'
-            ]]
-
-            );
+        $result = DB::table('student').get();
+        //SELECT * from student
+        return $result;
     }
 }
